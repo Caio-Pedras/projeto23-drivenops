@@ -20,17 +20,16 @@ jobs:
           envkey_DATABASE_URL: ${{secrets.DATABASE_URL}}
           directory: back-end
           file.name: .env
-      
+
       - name: Create frontend envfile
-         uses: SpicyPizza/create-envfile@v1.3
-          with:
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
           envkey_REACT_APP_BASE_URL: ${{secrets.REACT_APP_BASE_URL}}
           directory: front-end
           file.name: .env
 
       - name: Build
         run: docker-compose build
-      
+
       - name: Run
         run: docker-compose down && docker-compose up -d
-        
