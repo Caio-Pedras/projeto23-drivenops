@@ -13,9 +13,10 @@ jobs:
       - name: Create backend envfile
         uses: SpicyPizza/create-envfile@v1.3
         with:
-          envkey_POSTGRES_USER: ${{secrets.DATABASE_USER}}
-          envkey_POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-          envkey_POSTGRES_DB: ${{secrets.DATABASE_DB}}
+          envkey_DEBUG: false
+          envkey_POSTGRES_USER: ${{secrets.POSTGRES_USER}}
+          envkey_POSTGRES_PASSWORD: ${{secrets.POSTGRES_PASSWORD}}
+          envkey_POSTGRES_DB: ${{secrets.POSTGRES_DB}}
           envkey_DATABASE_URL: ${{secrets.DATABASE_URL}}
           directory: back-end/
           file_name: .env
