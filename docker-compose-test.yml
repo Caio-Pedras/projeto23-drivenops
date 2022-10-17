@@ -6,7 +6,7 @@ services:
   ports:
     - 4457:5432
   env_file:
-    - back-end/ .env.test
+    - ./back-end/.env.test
   volumes:
     - pg_sorteador-db:/var/lib/postgresql/data
   

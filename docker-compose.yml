@@ -6,7 +6,7 @@ services:
     ports:
       - 4457:5432
     env_file:
-      - back-end/.env
+      - ./back-end/.env
     volumes:
       - pg_sorteador:/var/lib/postgresql/data
   
@@ -18,7 +18,7 @@ services:
     depends_on:
       - postgres_sorteador_db
     env_file:
-      - back-end/.env
+      - ./back-end/.env
 
   react_sorteador_app:
     container_name: react_sorteador_app
