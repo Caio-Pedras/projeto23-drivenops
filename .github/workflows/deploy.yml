@@ -19,14 +19,14 @@ jobs:
           envkey_POSTGRES_DB: ${{secrets.DATABASE_DB}}
           envkey_DATABASE_URL: ${{secrets.DATABASE_URL}}
           directory: back-end
-          file.name: .env
+          file_name: .env
 
       - name: Create frontend envfile
         uses: SpicyPizza/create-envfile@v1.3
         with:
           envkey_REACT_APP_BASE_URL: ${{secrets.REACT_APP_BASE_URL}}
           directory: front-end
-          file.name: .env
+          file_name: .env
 
       - name: Build
         run: docker-compose build
